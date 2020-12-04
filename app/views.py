@@ -38,7 +38,7 @@ def fetch_posts():
 def index():
     fetch_posts()
     return render_template('index.html',
-                           title='YourNet: Decentralized '
+                           title='Propane Blockchain '
                                  'content sharing',
                            posts=posts,
                            node_address=CONNECTED_NODE_ADDRESS,
@@ -50,12 +50,16 @@ def submit_textarea():
     """
     Endpoint to create a new transaction via our application.
     """
-    post_content = request.form["content"]
-    author = request.form["author"]
+    producer = request.form["producer"]
+    buyer = request.form["buyer"]
+    price = request.form["price"]
+    quantity = request.form["quantity"]
 
     post_object = {
-        'author': author,
-        'content': post_content,
+        'producer': producer,
+        'buyer': buyer,
+        'price': price,
+        'quantity': quantity,
     }
 
     # Submit a transaction

@@ -6,9 +6,10 @@
 
 	<center>
 	<form action="/submit" id="textform" method="post">
-	    <textarea name="content" rows="4" cols="50" placeholder="Just write whatever you want to..."></textarea>
-	    <br>
-	    <input type="text" name="author" placeholder="Your name">
+		<input type="text" name="producer" placeholder="Producer">	
+		<input type="text" name="buyer" placeholder="Buyer">
+		<input type="number" name="price" placeholder="Price" step=".01">
+		<input type="number" name="quantity" placeholder="Quantity (gal)">
 	    <input type="submit" value="Post">
 	</form>
 	</center>
@@ -24,13 +25,16 @@
     <div class="post_box">
 	   <div class="post_box-header">
 	      <div class="post_box-options"><button class="option-btn">Reply</button></div>
-	      <div style="background: rgb(0, 97, 146) none repeat scroll 0% 0%; box-shadow: rgb(0, 97, 146) 0px 0px 0px 2px;" class="post_box-avatar">{{post.author[0]}}</div>
-	      <div class="name-header">{{post.author}}</div>
+	      <div style="background: rgb(0, 97, 146) none repeat scroll 0% 0%; box-shadow: rgb(0, 97, 146) 0px 0px 0px 2px;" class="post_box-avatar">{{post.buyer[0]}}</div>
+	      <div class="name-header">{{post.buyer}}</div>
 	      <div class="post_box-subtitle"> Posted at <i>{{readable_time(post.timestamp)}}</i></div>
 	   </div>
 	   <div>
 	      <div class="post_box-body">
-	         <p>{{post.content}}</p>
+			 <p>{{post.producer}}</p>
+			 <p>{{post.buyer}}</p>
+			 <p>{{post.price}}</p>
+			 <p>{{post.quantity}}</p>
 	      </div>
 	   </div>
 	</div>
